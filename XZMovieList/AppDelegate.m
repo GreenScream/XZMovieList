@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MovieListTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[MovieListTableViewController new]];
+    self.window.rootViewController = navigation;
     return YES;
 }
 
